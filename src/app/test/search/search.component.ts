@@ -56,10 +56,10 @@ export class SearchComponent implements OnInit {
             data: { T: _value.T, o: _value.o, c:_value.c },
         });
 
-        dialogRef.afterClosed().subscribe(result => {
-            console.log('The dialog was closed');
-            _value.T = result;
-        });
+        // dialogRef.afterClosed().subscribe(result => {
+        //     console.log('The dialog was closed');
+        //     _value.T = '';
+        // });
     }
 }
 
