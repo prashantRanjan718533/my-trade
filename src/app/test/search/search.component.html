@@ -1,0 +1,28 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    
+    <mat-label>State</mat-label>
+    <input matInput aria-label="Stocks" [matAutocomplete]="auto" [formControl]="stateCtrl">
+
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option (onSelectionChange)="updateMySelection(stocks)"  *ngFor="let stocks of filteredStates | async" [value]="stocks.T">
+        <span>{{stocks.T}}</span> |
+        <small>open at : {{stocks.o }}</small>
+        <small> closed at : {{stocks.c}}</small>
+        <!-- {{stocks.T}} -->
+      </mat-option>
+      
+       
+      
+    </mat-autocomplete>
+  </mat-form-field>
+  <!-- {{matDialogueModel | json}} -->
+  
+  <br>
+  
+  <mat-slide-toggle [checked]="stateCtrl.disabled"
+    (change)="stateCtrl.disabled ? stateCtrl.enable() : stateCtrl.disable()">
+    Disable Input?
+  </mat-slide-toggle>
+
+</form>

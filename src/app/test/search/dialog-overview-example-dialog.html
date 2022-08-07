@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Stock Day's Performance</h1>
+<div mat-dialog-content>
+  <span> {{data.T }}</span>
+  <span> Opens at   {{data.o }}  and </span>
+  <span>Close at {{data.c }} </span>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">BUY</button>
+  <!-- <button mat-button  cdkFocusInitial>Ok</button> -->
+</div>
